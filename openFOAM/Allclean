@@ -1,0 +1,18 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial clean functions
+. $WM_PROJECT_DIR/bin/tools/CleanFunctions
+
+# Remove surface and features
+rm -f constant/triSurface/motorBike.obj.gz > /dev/null 2>&1
+rm -rf constant/extendedFeatureEdgeMesh > /dev/null 2>&1
+rm -f constant/triSurface/*.eMesh > /dev/null 2>&1
+rm -f 0/thickness* > /dev/null 2>&1
+rm -f 0/phi* > /dev/null 2>&1
+rm -f 0/nSurface* > /dev/null 2>&1
+rm -f 0/wallShear* > /dev/null 2>&1
+
+cleanCase
+
+#------------------------------------------------------------------------------
